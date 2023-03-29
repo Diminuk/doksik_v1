@@ -1,0 +1,13 @@
+\select@language {magyar} \contentsline {section}{\numberline {1}Összefoglaló}{2}{section.1}%
+\select@language {magyar} \contentsline {section}{\numberline {2}Objektum detektáló alrendszer}{2}{section.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.1}Vizsgált hálóarchitektúrák}{2}{subsection.2.1}%
+\select@language {magyar} \contentsline {section}{\numberline {3}Tanítóadat generálás}{2}{section.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1}Probléma ismertetése}{2}{subsection.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.2}Megoldási lehetőségek}{2}{subsection.3.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.3}Vegyes tanító adat}{2}{subsection.3.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.4}Valós adatra illesztés}{2}{subsection.3.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.5}További fejlesztési irányok}{2}{subsection.3.5}%
+\select@language {magyar} \contentsline {section}{\numberline {4}Pozíciómeghatározás}{2}{section.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.0.1}Megvizsgált módszerek}{3}{subsubsection.4.0.1}%
+\select@language {magyar} \contentsline {section}{\numberline {5}Robot manipulátor}{3}{section.5}%
+\select@language {magyar} \contentsline {section}{\numberline {6}Irodalomjegyzék}{3}{section.6}%

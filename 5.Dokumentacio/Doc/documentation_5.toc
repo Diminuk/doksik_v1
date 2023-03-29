@@ -1,0 +1,14 @@
+\select@language {magyar} \contentsline {section}{\numberline {1}Mérföldkövek}{2}{section.1}%
+\select@language {magyar} \contentsline {section}{\numberline {2}Összefoglaló}{2}{section.2}%
+\select@language {magyar} \contentsline {section}{\numberline {3}Objektum detektáló alrendszer}{2}{section.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1}Rendszer gyártókörnyezetbeli működésének leírása}{2}{subsection.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.2}Szöghelyzet meghatározás síkokban}{2}{subsection.3.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.3}További fejlesztési irány}{2}{subsection.3.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.3.1}Adatgenerálás további fejlesztések}{2}{subsubsection.3.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.3.2}Hálóoptimalizálás}{2}{subsubsection.3.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.3.3}Szimulációs implementáció}{2}{subsubsection.3.3.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.3.4}Orientáció detektálás további vizsgálata, tesztelése}{3}{subsubsection.3.3.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4}Robot manipulátor}{3}{section.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1}Precíziós tesztek}{3}{subsection.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2}ROS környezetbeli implementáció}{3}{subsection.4.2}%
+\select@language {magyar} \contentsline {section}{\numberline {5}Irodalomjegyzék}{3}{section.5}%

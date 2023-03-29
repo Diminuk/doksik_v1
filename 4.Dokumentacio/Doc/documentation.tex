@@ -1,0 +1,183 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{romannum}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{t1enc}
+\usepackage{pdfpages}
+\usepackage[magyar]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{pdfpages}
+\usepackage{ marvosym } 
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+
+\pgfplotsset{width=\textwidth,compat=newest}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{romannum}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{t1enc}
+\usepackage{svg}
+\usepackage[magyar]{babel}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\title{K+F Projekt dokumentáció}
+\author{}
+\date{2}
+\pagestyle{fancy}
+\lhead{K+F Projekt dokumentáció}
+\rhead{ACSG Kft.}
+\cfoot{\thepage. oldal}
+
+\begin{document}
+\pagenumbering{arabic}
+
+\begin{center}
+    \hrule
+    \vspace{0.5cm}
+    \begin{Huge}
+    K+F projekt dokumentáció\\
+    ACSG Kft.\\
+    \end{Huge}
+    \vspace{0.5cm}
+    \begin{huge}
+    Időszak:\\
+    \end{huge}
+    \begin{Large}
+    2023.01.01. - 2023.02.28.\\
+    \end{Large} \vspace{10pt}
+    \begin{large}
+    Készítette: Wenesz Dominik\\
+    \end{large}\vspace{0.5cm}
+    \hrule
+    
+  \end{center}
+  \begin{figure}[b]
+    \centering
+    \includegraphics[]{acsg.png}
+\end{figure}
+  
+
+
+\thispagestyle{empty}
+\setcounter{page}{0}
+
+
+
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Összefoglaló}
+A dokumentum által tekintett időintervallumon belül megtörtént a robotkar (SCARA)
+pontosságának tesztelése a munkatérben, melynek eredményeként elmondható, hogy 
+a csatlakozóházak megfelelően precíz manipulálásához megfelelő az alkalmazott robotkar.\\[5pt]
+A pontosság mérésének tükrében a későbbi digitális iker tervezése is megkezdődött, de 
+a tekintett időszakban mindösszesen a szimulációs keretrendszer beállítása indult el 
+egy Linux operációs rendszerű PC-n.\\[5pt]
+A mélytanulásos objektumdetektálás tanítóadat generáló szoftvere a jelenlegi teszt 
+alkalmazásokhoz teljesen elkészült, a későbbiekben a rendszerszintű integráció 
+kapcsán lesz csak szükséges további változtatás eszközölése rajta.\\[5pt]
+Folytattuk a különböző Deep Learningen alapuló objektum detektáló hálóarchitektúra 
+vizsgálatát a csatlakozóházak detektálására.\\[5pt]
+Az objektum detektáláson túl a pozíciómeghatározás lehetséges megoldásait vizsgáltuk,
+melynek eredményei lentebb láthatók, illetve az objektum detektálást részletesen tárgyaló
+dokumentumba felvezetésre kerültek.
+
+
+\section{Objektum detektáló alrendszer}
+Az előző dokumentumban kifejtésre került, hogy a deep learning egy jó alternatívát jelent a hagyományos képfeldolgozási 
+módszerekre többek közt az objektumdetektálás területén belül is. 
+
+\subsection{Vizsgált hálóarchitektúrák}
+
+\section{Tanítóadat generálás}
+\subsection{Probléma ismertetése}
+
+\subsection{Megoldási lehetőségek}
+
+\subsection{Vegyes tanító adat}
+
+\subsection{Valós adatra illesztés}
+
+\subsection{További fejlesztési irányok}
+
+
+
+
+
+\section{Pozíciómeghatározás}
+A fentebb említett hálóarchitektúrák önmagukban mindösszesen az objektumdetektálásra képesek, mint azt az előző
+részekben megállapítottuk, jelen alkalmazási formára a sebesség igényénél fogva elegendő a bounding-box típusú
+objektu felismerést alkalmaznunk, hiszen elegendő adatot tartalmaz a robotvezérléshes és szignifikánsan gyorsabb,
+mint a szegmentálással is kiegészített hálóarchitektúra.\\[5pt]
+Azonban a megfelelő fészekbe való pozícionáláshoz további input paraméterekre van szükségünk, az objektum elfordultsága
+is nélkülözhetetlen paraméter ha egy kamerával szeretnénk megoldani a feladatot. Azonban itt több lehetőségünk is van a 
+megvalósításra, a dokumentum által tárgyalt időszakban ezen lehetőségeket térképeztük fel és alkalmazhatóságukat 
+az adott problémán elkezdtük megvizsgálni.\\
+Az általunk megfontolandónak talált megközelítések a következők:
+\begin{itemize}
+  \item Egy a munkaterület felett elhelyezett kamerától különálló kamera, mely a fészek felett van elhelyezve
+  és hagyományos képfeldolgozási technikával (pl.: szögkülönbség meghatározás) megfelelő rotációs értéket adja a 
+  robotvezérlőnek. Természetesen léteznek nem explicit szögmeghatározó algoritmusok is, melyek egy adott hibaminimalizációra,
+  vagy mintakövetésre törekszenek, azaz kvázi regresszív módszerrel közelítik a megfelelő orientációt, mellyel a fészekbe
+  kell kerülnie a csatlakozóháznak.\\
+  Ez a megoldás viszonylag egyszerű, azonban mivel két kamera szükséges hozzá (munkatér nagysága miatt is), illetve 
+  nem minden csatlakozó esetén feltétlenül hibamentesen generalizálható, ezért alkalmazhatóságát meg kell vizsgálni részletesebben.
+  \item Az előző esetet egy kamerával is megoldhatjuk ha azt a robotkar és a munkatér, illetve a fészek geometriája
+  lehetővé teszi.
+  \item A hagyományos képfeldolgozási módszereken túl ebben az esetben is használhatunk neurális hálózatokat, azaz
+  deep learingen alapuló módszereket.\\
+  Egyik módszer, hogy már az objektumdetektáló neurális hálózatot bővítjük ki egy orientációt meghatározó résszel. 
+  Ekkor annyi szabadságunk van, hogy tetszőleges kondíciókat adhatunk meg, azaz lehetséges a fészekbe való behelyezés
+  több variációval való kiegészítése, illetőleg regressziós módon megadhatunk 1-3 elfordulási komponenst (tengelyek körül),
+  de tekintve, hogy SCARA robottal dolgozunk, így elegendő egy elfordulással operálni ha már megállapítottuk az 
+  objektumról, hogy felvehető.\\
+  A rendszer ilyen szintű bővítésével eljutunk oda, hogy implicit meghatározzuk az objektum 3D térben vett 6 szabadságfokú
+  pozícióját, mely a mélytanulás ilyen típusú alkalmazásában egy teljesen külön álló kutatási terület, melyre 
+  léteznek megoldási módok, melyeket a későbbiekben tesztelni is fogunk, azonban jelen alkalmazásnál SCARA robotnál 
+  egyszerűbb modellel is képesek vagyunk elérni a mefelelő pozícionálást elméleti szinten.
+  \item A pozíció meghatározása nem feltétlen kell, hogy explicit módon történjen, ha egy adott objektum osztályon 
+  belül úgynevezett keypoint-okat keresünk, akkor azok elhelyezkedéséből determinálható az objektum pozíciója.
+  Ennek előnye, hogy rengeteg információt tudunk meghatározni egy lépésben, de jellemzően egy ilyen háló betanítása
+  több tanítóadatot igényel és nagyobb osztályszám esetén nem feltétlenül konvergál a valósághoz, továbbá természetesen
+  a végrehajtási idő is jeentősen megnő a háló komplexitásával együtt.
+\end{itemize}
+\subsubsection{Megvizsgált módszerek}
+Az adott időintervallumban egyelőre főként csak a lehetséges megoldások elméleti kidolgozása zajlott, illetve
+a hagyományos képfeldolgozáson alapuló módszerek közül elkezdtük az algoritmusok implementációját is, persze
+az OpenCV-ben találhatók hasonló algoritmusok, de a feladat specifikussága miatt mindenképp akár ezeket felhasználva is, 
+de saját algoritmust fejlesztenünk a robosztusabb megoldáshoz.
+\section{Robot manipulátor}
+Miután már kiválasztásra került a technológiai szempontból optimális végberendezés, annak valódi környezetben 
+való tesztelését végeztük, továbbá magának a robotvezérlőnek a beállítása, kalibrálása, a robot felprogramozása és 
+egyszerűbb illetve összetettebb mozgások megvalósítása LUA programnyelven.\\[5pt]
+Többek között a maximális csuklógyorsulást és csuklósebességet teszteltük. Ezek a robot adatlapjában is meg vannak adva 
+számszerűen, azonban mindig érdemes az ilyen jellegű validálás, főként mivel az adatlapok az ideális, adott modellezési 
+módhoz tartozó értékeket tartalmazzák.\\
+(...)
+
+\section{Irodalomjegyzék}
+
+
+
+
+
+
+
+\end{document}
