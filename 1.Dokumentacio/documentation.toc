@@ -1,0 +1,35 @@
+\select@language {magyar} \contentsline {section}{\numberline {1}Cégünk bemutatása}{2}{section.1}%
+\select@language {magyar} \contentsline {section}{\numberline {2}Első negyedéves munka összefoglalása}{3}{section.2}%
+\select@language {magyar} \contentsline {section}{\numberline {3}Jelenlegi rendszer}{3}{section.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1}Ismertetés}{3}{subsection.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.2}Probléma}{3}{subsection.3.2}%
+\select@language {magyar} \contentsline {section}{\numberline {4}Célkitűzés}{4}{section.4}%
+\select@language {magyar} \contentsline {section}{\numberline {5}Átalakítási tervek}{5}{section.5}%
+\select@language {magyar} \contentsline {section}{\numberline {6}Objektum detektáló alrendszer}{6}{section.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.1}Működés összefoglalása, követelmények}{6}{subsection.6.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.2}Szenzor és feldolgozó egység}{6}{subsection.6.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.3}Előfeldolgozás}{6}{subsection.6.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.4}Klasszifikációs és szegmentáló neurális háló}{6}{subsection.6.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.5}Háló(k) tanítása}{6}{subsection.6.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.6}Adatszerzés}{7}{subsection.6.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.7}Alrendszer kimenete}{7}{subsection.6.7}%
+\select@language {magyar} \contentsline {section}{\numberline {7}Objektum manipuláló alrendszer}{7}{section.7}%
+\select@language {magyar} \contentsline {subsection}{\numberline {7.1}Működés összefoglalása, követelmények}{7}{subsection.7.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {7.2}Manipulátor}{7}{subsection.7.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {7.3}Irányítási keretrendszer}{7}{subsection.7.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {7.4}Pozíció ellenőrzés, korrekció}{8}{subsection.7.4}%
+\select@language {magyar} \contentsline {section}{\numberline {8}Optimalizációs alrendszer}{8}{section.8}%
+\select@language {magyar} \contentsline {section}{\numberline {9}Biztonsági alrendszer}{9}{section.9}%
+\select@language {magyar} \contentsline {subsection}{\numberline {9.1}Manipulátor munkaterülete}{9}{subsection.9.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {9.2}Manipulátor}{9}{subsection.9.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {9.3}Fészekbeli pozícióhiba}{10}{subsection.9.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {9.4}Véletlenszerű hibadetektálás}{10}{subsection.9.4}%
+\select@language {magyar} \contentsline {section}{\numberline {10}Felhasználói felület - GUI}{10}{section.10}%
+\select@language {magyar} \contentsline {section}{\numberline {11}További felhasználási területek, integritás}{11}{section.11}%
+\select@language {magyar} \contentsline {subsection}{\numberline {11.1}Objektum detektáló alrendszer további felhasználása}{11}{subsection.11.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {11.2}Optimalizációs alrendszer további felhasználása}{11}{subsection.11.2}%
+\select@language {magyar} \contentsline {section}{\numberline {12}Irodalomjegyzék}{11}{section.12}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.1}Objektum detektáló alrendszer}{11}{subsection.12.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.2}Objektum manipuláló alrendszer}{11}{subsection.12.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.3}Optimalizációs alrendszer}{11}{subsection.12.3}%
+\select@language {magyar} \contentsline {section}{\numberline {13}Mellékletek}{12}{section.13}%

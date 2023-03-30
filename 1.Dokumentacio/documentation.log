@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  30 MAR 2023 01:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  18 OCT 2022 13:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/Work_Dani/ACSG_P&P_Robot/doksik/3.Dokumentacio/Doc/documentation.tex
-(d:/Work_Dani/ACSG_P&P_Robot/doksik/3.Dokumentacio/Doc/documentation.tex
+**c:/Users/wenes/OneDrive/Dokumentumok/Deep_IMGProcess/Documentation/documentation.tex
+(c:/Users/wenes/OneDrive/Dokumentumok/Deep_IMGProcess/Documentation/documentation.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-09-28> (c:/texlive/2022/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -694,103 +694,62 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 LaTeX Info: Redefining \cal on input line 497.
 LaTeX Info: Redefining \mit on input line 498.
 )
-<acsg.png, id=91, 395.4775pt x 124.465pt>
-File: acsg.png Graphic file (type png)
-<use acsg.png>
-Package pdftex.def Info: acsg.png  used on input line 71.
-(pdftex.def)             Requested size: 395.47653pt x 124.46469pt.
- [0
-
-
-{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./acsg.png>] (./documentation.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
  (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
  (c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+) [0
+
+
+{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./documentation.toc)
 \tf@toc=\write5
 \openout5 = `documentation.toc'.
 
  [1]
-<xavier.jpg, id=132, 1204.5pt x 678.535pt>
-File: xavier.jpg Graphic file (type jpg)
-<use xavier.jpg>
-Package pdftex.def Info: xavier.jpg  used on input line 113.
-(pdftex.def)             Requested size: 361.35278pt x 203.56207pt.
-<optika.png, id=133, 191.21437pt x 149.8097pt>
-File: optika.png Graphic file (type png)
-<use optika.png>
-Package pdftex.def Info: optika.png  used on input line 127.
-(pdftex.def)             Requested size: 191.2139pt x 149.80931pt.
-<szenzor.jpg, id=134, 1546.77875pt x 1973.3725pt>
-File: szenzor.jpg Graphic file (type jpg)
-<use szenzor.jpg>
-Package pdftex.def Info: szenzor.jpg  used on input line 128.
-(pdftex.def)             Requested size: 154.68694pt x 197.3488pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--131
+Underfull \hbox (badness 10000) in paragraph at lines 61--73
 
  []
 
+[2] [3] [4]
+Package epstopdf Info: Source file: <system_overview.eps>
+(epstopdf)                    date: 2022-10-11 00:36:18
+(epstopdf)                    size: 206006 bytes
+(epstopdf)             Output file: <system_overview-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-10-11 00:37:18
+(epstopdf)                    size: 60911 bytes
+(epstopdf)             Command: <repstopdf --outfile=system_overview-eps-converted-to.pdf system_overview.eps>
+(epstopdf)             \includegraphics on input line 148.
+Package epstopdf Info: Output file is already uptodate.
+<system_overview-eps-converted-to.pdf, id=216, 895.345pt x 363.3575pt>
+File: system_overview-eps-converted-to.pdf Graphic file (type pdf)
+<use system_overview-eps-converted-to.pdf>
+Package pdftex.def Info: system_overview-eps-converted-to.pdf  used on input line 148.
+(pdftex.def)             Requested size: 537.21115pt x 218.01617pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2 <./xavier.jpg>] [3 <./optika.png> <./szenzor.jpg>]
-<rcnn.png, id=147, 634.62094pt x 223.58531pt>
-File: rcnn.png Graphic file (type png)
-<use rcnn.png>
-Package pdftex.def Info: rcnn.png  used on input line 198.
-(pdftex.def)             Requested size: 444.23163pt x 156.50864pt.
-<transform.png, id=148, 831.85782pt x 551.81157pt>
-File: transform.png Graphic file (type png)
-<use transform.png>
-Package pdftex.def Info: transform.png  used on input line 213.
-(pdftex.def)             Requested size: 415.92789pt x 275.9051pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<unet.png, id=149, 501.875pt x 282.05376pt>
-File: unet.png Graphic file (type png)
-<use unet.png>
-Package pdftex.def Info: unet.png  used on input line 235.
-(pdftex.def)             Requested size: 301.12732pt x 169.23355pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--238
-
+Overfull \hbox (36.72716pt too wide) in paragraph at lines 148--149
+[][] 
  []
 
-[4 <./rcnn.png>] [5 <./transform.png> <./unet.png>]
-<yolo.jpg, id=166, 218.8175pt x 146.5475pt>
-File: yolo.jpg Graphic file (type jpg)
-<use yolo.jpg>
-Package pdftex.def Info: yolo.jpg  used on input line 265.
-(pdftex.def)             Requested size: 218.81696pt x 146.54712pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--268
-
- []
-
-[6 <./yolo.jpg>] [7] (./documentation.aux)
+[5 <./system_overview-eps-converted-to.pdf>] [6] [7] [8] [9] [10] [11] [12] (./documentation.aux)
 Package rerunfilecheck Info: File `documentation.out' has not changed.
-(rerunfilecheck)             Checksum: 45644A9509CA5A863F9BE448A37B8F99;3517.
+(rerunfilecheck)             Checksum: F1883EC2C91A6E9181844570EBA31F92;6578.
  ) 
 Here is how much of TeX's memory you used:
- 35221 strings out of 475071
- 806890 string characters out of 5782908
- 1267903 words of memory out of 5000000
- 56007 multiletter control sequences out of 15000+600000
- 477124 words of font info for 44 fonts, out of 8000000 for 9000
+ 35228 strings out of 475071
+ 806962 string characters out of 5782908
+ 1270904 words of memory out of 5000000
+ 55996 multiletter control sequences out of 15000+600000
+ 482862 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,94p,763b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb>
-Output written on documentation.pdf (8 pages, 1319378 bytes).
+ 99i,11n,94p,776b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
+Output written on documentation.pdf (13 pages, 235237 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 221 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 308 PDF objects out of 1000 (max. 8388607)
+ 272 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 298 words of extra memory for PDF output out of 10000 (max. 10000000)
 

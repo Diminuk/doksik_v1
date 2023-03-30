@@ -130,33 +130,154 @@ optika adatlapja szintén megtalálható a dokumentáció megfelelő almappájá
 \end{figure}\\
 
 \subsection{Deep Learning}
-(leírás +kép)
+A deep learning (mélytanulás) a gépi tanulás egy területe, melyben 
+neurális hálókat használnak. Rendkívül számításigényes a modellek tanítása, 
+de megfelelően komplex hálóval bármilyen függvény közelíthető (létrehozható), 
+azaz a nemlineáris klasszifikáció is elvégezhető velük, ezért objektumdetektálásra 
+megfelelő architektúrával alkalmasak.
 \subsection{Objektum detektálás mélytanulás alapon}
-(leírás + kép)
+A neurális hálók alapján történő objektum detektálás célja, hogy a neurális 
+hálóba beérkező inputból (kép) a háló kimenetén olyan struktúrát kapjunk, mellyel 
+leírható az objektumok pozíciója a képen, az alábbi reprezentációk a legnépszerűbbek:
 \subsubsection{Bounding box}
-(leírás +kép)
+A bounding box detection esetében az egyes osztályokhoz tartozó objektumokat 
+befoglaló téglalalpokat keresünk a neurális hálóval, ez sokszor elegendő és 
+gyorsabb a többi detektálási lehetőségnél.
 \subsubsection{Semantic segmentation}
-(leírás +kép)
+Ebben a szegmentálási típusban minden egyes pixelhez valamilyen osztályt rendelünk, 
+ez lehet a háttér (BG) is (komplexebb, magasabb rendű mint a bounding box). Önvezetés témakörében népszerű alaprendszert biztosít.
 \subsubsection{Instance segmentation}
-(leírás +kép)
+Ebben az esetben csak a felismert osztályokhoz tartozó objektumokat reprezentáló 
+pixelek kerülnek detektálásra (outputon csak ezeket látjuk).
 \subsubsection{Keypoint detection}
-(leírás +kép)
+A keypoint detection esetében egy képen egyrészt az egyes class-okhoz
+tartozó objektumokat szeertnénk detektálni, illetve egy-egy osztálynak
+tetszőleges nevezetes pontjait is precízen detektálni szeretnénk. Például 
+egy egyszerű rgb kamera által összetett humán mozgások vizsgálata esetén 
+gyakran alkalmazzák napjainkban. A projekt szempontjából az orientáció 
+és elhelyezkedés könnyedén származtatható ilyen módszerrel.
 
 \subsection{Projekt során nem vizsgálandó hálóarchitektúrák}
+Az olyan jellegű ipari feladatoknál, melyeknél egy adott gyártógép/gyártócella kiszolgálása
+zajlik valamilyen robottal, kiemelten fontos a precizítás mellett az időhatékonyság, 
+azaz jelen esetben, hogy közel valós időben képesek legyünk megállapítani a
+munkatérben tartózkodó csatlakozóházakról, hogy milyen típusúak, továbbá felvehetőek-e 
+a manipulátorral. Ennélfogva bár mindenképp megvizsgálásra kerül a későbbiekben, de 
+első közelítésben nem foglalkozunk olyan hálóarchitektúrákkal, melyek nem képesek közel 
+real-time működésre, hiszen ekkor egy olyan nagyságú $\tau$ időkésést adnánk a 
+rendszerünknek, mellyel szinte biztosan instabil lenne, azaz olyan módosításokat 
+kellene eszközölnünk az egész rendszeren, melyek kompenzálják ezt a hatást. Példaként 
+megemlíthető, hogy ekkor meg kellene állítanunk a futószalagot, amelyen az új 
+megmunkálandó csatlakozók érkeznek, ez nagyban vissza tudja fogni a termelékenységet, 
+időegységre arányosított kihozatalt.
+\subsubsection{RCNN és Faster-RCNN}
+AZ RCNN hálóarchitektúrák alapját a konvolúciós layer-ek
+képzik, melyek a már tárgyalt módon lokális tulajdonságokat, 
+pixelek közti tulajdonságokat képesek kinyerni a képből. 
+A konvolúciós layer-ek előtt azonban az ilyen architektúrákban 
+egy úgynevezett "region extractor" helyezkedik el, 
+melynek feladta, hogy a képet kisebb részekre ossza, 
+mégpedig olyan formán, hogy olyan régiókat kapjunk, 
+melyekben valószínűsíthetően egy-egy objektum helyezkedik 
+vagy éppen egy objektum sem helyezkedik el.\\[5pt]
+A mélyebb technikai részletektől eltekintve elmondható, hogy 
+több megoldás is létezik a régió kinyerésre, de minden esetben 
+kétlépéses objektumdetektálásról beszélünk, hiszen 
+az objektum klasszifikáció és pixelszintű regresszió 
+csak a háló 2. (konvolúciós) részében valósul meg.\\
+Ennélfogva mint a többi kétlépéses objektum detektáló háló,
+valós időben nem képesek működni, továbbá az RCNN-ek egy sajátossága, 
+hogy tanításuk kifejezetten nehézkes főként az adatelőkésztés 
+miatt.\\[5pt]
+A FASTER-RCNN ahogy azt a név is mutatja egy gyorsabb, 
+de még mindig valós időhöz képest lassú hálóarchitektúra.\\[5pt]
+Ennélfogva a projekt szerves részét nem képzi az RCNN-ek 
+vizsgálata.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.7]{rcnn.png}
+    \caption{RCNN hálóarchitektúra sematikus ábra}
+\end{figure} 
+\subsubsection{Vision - transzformerek}
+A deep learning technikákban a transzformerek először a természetesnyelv feldolgozásban 
+kerültek kifejlesztésre és alkalmazásra is, majd 
+a legtöbb alkalmazási területen megjelent, többet között
+a konvolúciós hálókat is jó ideig maguk mögé utasították 
+a vision-transzformerek. Az utóbbi időben ismét 
+a konvolúciós hálók javára kezd billenni a mérleg. 
+A transzformerek működéséről jelen dokuemntumban nem teszünk 
+említést, csupán addig a szintig, hogy sebességüknél fogva
+az RCNN-hez hasonlóan nem valós időben operálnak.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{transform.png}
+    \caption{Transzformer hálóarchitektúra sematikus ábrája}
+\end{figure}
 
 \subsection{Vizsgált hálóarchitektúrák}
 \subsubsection{Egyszerű konvolúciós háló - U-net}
-
+Az deep learning alapúobjektumdetektálás egyik legelső implementációja 
+az úgynevezett U-net volt, mely konvolúciós layer-ekből áll. 
+A bemeneti képet konvolúciós és dropout layereken keresztül 
+egy jóval kisebb dimenziójú úgynevezett feature vektorba 
+transzformáljuk, majd a háló kiemenete felé közeledve inverz 
+transzformációt hajtunk végre a konvolúciós layerekkel, így 
+az eredeti kép dimenziójának megfelelő kimenetet kapunk.\\[5pt]
+A feature vektorba kódoló részt encodernek, az utána következő 
+részt decodernek nevezzük.\\
+Belátható, hogy így megfelelő tanítóadattal megoldható 
+az objektumdetektálás, azonban szintén észlelhető, hogy 
+egyszerűségénél fogva nem feltétlen a legjobb megoldás.\\[5pt]
+Sebességét tekintve megfelelően kis paraméterszámmal 
+gyors működés érhető el (természetesen a pontosság rovására).
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale = 0.6]{unet.png}
+    \caption{U-net architektúra}
+\end{figure} \\
 \subsubsection{SSD}
-
+Az SSD (Single-Shot-Detector) egy olyan hálóarchitektúra, mely egy lépésben 
+hajtja végre az objektumdetektálást, így lehetséges vele a közel valós 
+idejű objektumdetektálás.\\[5pt]
+A háló működésének részletes leírására az objektum detektálás dokuemntációban 
+kerül sor, röviden az alapgondolat, hogy kisebb, egyenlő nagyságú 
+szegmensekre osztjuk a képet, majd ezekre különböző konvolúciós layereket 
+hattatva (és azokat a kimenetre csatolva) klasszifikációt hajtunk végre 
+(illetve bounding box regressziót természetesen). Mindez egy lépésben történik.\\[5pt]
+A YOLO hálóarchitektúra megjelenéséig (illetve a YOLOv2 előtt) a leggyorsabb 
+és mellette igen precíz hálóarchitektúrának számított, napjainkban a 
+YOLO jobban teljesít.
 \subsubsection{YOLO}
-
+A YOLO (You only look once) napjaink egyik, ha nem a legelterjedtebb 
+hálótípusa ha objektumdetektálásról van szó. A részletesebb elemzés, illetve 
+a későbbiekben a pozíciómeghatározás problémaköre ezen hálóra való illesztése 
+az objektum detektálási dokumentációban szerepel. Röviden működését tekintve 
+hasonló az SSD-hez hiszen szintén egy lépésben történik a detektálás, továbbá
+szintén kisebb szegmensekre osztja az eredeti képet. A fő különbség a két 
+módszer között, hogy a YOLO esetében a klasszfikáció regresszióra van visszavezetve, 
+hiszen valószínűségi alapon történik a bounding box detektálása (részletesebben lásd obj. detektálás dokumentáció).\\[5pt]
+A YOLO-ból évente, de az utóbbi időben akár pár havonta újabb verziók 
+érkeznek, melyek egyre jobb és jobb eredményeket adó hálókat eredményeznek.\\
+A projekt során főként ezen hálóarchitektúrára fókuszálunk gyorsasága, precizítása 
+és nagyfokú generalizáló hatása miatt.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=1]{yolo.jpg}
+    \caption{YOLO architektúra működése sematikusan}
+\end{figure}\\
 \subsection{Konklúzió}
+Egyelőre mindösszesen irodalomkutatásra és igen minimális méretű
+adathalmazra alapozva mondhatjuk, de mindenképp valós idejű és jól 
+általánosítható, precíz hálóra van szükségünk a feladat elvégzéséhez, így 
+a különböző YOLO verziók tezstelése, módosítása, kiegészítése egy célravezető 
+útnak mutatkozik.
 
 \section{Robot manipulátor}
-
 \subsection{Végberendezés kiválasztása}
-(...)
+Végberendezések tekintetében a lehetőségek feltárását követően 
+arra jutottunk, hogy vákuumos megfogókat fogunk alkalmazni, 
+hiszen ezek megfelelően egyszerűek és mindösszesen 
+három koordinátából determinálható a pozícionálás velük.
 
 \subsection{Modellezés}
 A dokumentum által tárgyalt időszakon belül a használt SCARA robot gépészeti modellezése, jellemző adatainak, melyek

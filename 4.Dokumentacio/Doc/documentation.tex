@@ -105,18 +105,79 @@ Az előző dokumentumban kifejtésre került, hogy a deep learning egy jó alter
 módszerekre többek közt az objektumdetektálás területén belül is. 
 
 \subsection{Vizsgált hálóarchitektúrák}
-
+Elsősorban a különböző YOLO architektúrákat vizsgáltuk először valós adatokon (kisebb adathalmaz), 
+majd szintetikus képeket, illetve vegyes adathalmazon is.\\
+Jó eredmények születtek, ezek részletezése az összefoglaló dokumentációban 
+tekinthető meg, illetve a tezstelési jegyzőkönyvekben.\\[5pt]
+Megjegyzésként pár képpel demonstrálva a haladást:
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{rossz.png}
+  \caption{Nem megfelelően generált képek esetén tanítás után}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.7]{jo.png}
+  \caption{Megfelelően generált képek esetén tanítás után}
+\end{figure}
 \section{Tanítóadat generálás}
 \subsection{Probléma ismertetése}
-
+A deep learning alkalmazhatósága szinte bármilyen tudományterületen 
+megkérdőjelezhetetlen, struktúrált és struktúsálatlan adatra is egyaránt 
+használható. Jellemzően két robléma merül fel ha a mélytanulásról beszélünk, 
+az egyik a nagyságrendekkel nagyobb tanítóadatot igény, illetve a tanításhoz 
+szükséges számítási kapacitás és idő.\\[5pt]
+Könnyedén belátható, hogy egy felxibilis objektumdetektáló rendszerhez 
+nagyszámú képre van szükség, adott esetben gyakran, ez ha emberi erőből végezzük 
+időben és kiadásokban is nagy igényekkel rendelkezik.
 \subsection{Megoldási lehetőségek}
-
+Egy megoldási lehetőség a fentebb említett adatigényre, ha szintetikusan 
+generáljuk azokat. Természetesen ez már önmagában hibákat szülhet, hiszen 
+a generált képekkel a valóságot lefedni igen nehéz feladat tud lenni.
+A képgenerálás mellett az adatdúsítás is igen hasznos eszköz ebben a problémakörben,
+ez csupán annyit jelent, hogy képfeldolgzási technikákkal manipuláljuk a tanítóadatokat 
+(zaj bevezetése, elforgatás stb..) és így sokszor nagyobb adatbázishoz jutunk.\\[5pt]
+Az adatdúsítás viszonylag egyszerű feladat, bevett módszerek vannak rá, azonban 
+a szintetikus képgenerálás (azaz számítógéppel történő szimuláció gyakorlatilag) már 
+korántsem ilyen triviális.\\[5pt]
+Egy további tényező mely nehezítést von be az, hogy a képgeneráásnak viszonylag gyorsan is kell 
+történnie (legalább olyan gyorsan, mintha valós képeket készítenénk), 
+azaz egy jó választás lenne valamilyen game-engine használata például a Unity-é, 
+hiszen ezek nagyon gyors renderelésre lettek kifejlesztve. Azonban 
+nagyon fontos tényező a valóság reprezentálása, lefedése és tipikusan a
+számítógépes játékokat meghajtó motorok csak addig generálják a képeket, amíg 
+kellőképpen valósnak, szépnek látszik az emberi szem számára, ez azonban 
+még nem a valós képhez haosnlító eredményt jelent, több fizikai tényező is 
+elhanyagolásra kerül.\\[5pt]
+Az általunk használt megoldás egy fizikai renderelésen alapuló nyílt forráskódú 
+szoftver és egyben könyvtár a Blender használatára épül. Tetszőlegesen 
+komplex kép generálható benne, mely azon fizikai paramétereket is figyelembe veszi, 
+amiket a fentebb említett gyorsabb környezetek nem. Emellett a sebessége is elfogadható, 
+GPU-kra optimalizált, így egyszerre több szálon párhuzamosan tud futni a 
+renderelés.\\[5pt]
+Eze szoftverre építettük még egy nyílt forráskódú segédkönyvtár bevonásával 
+a képgeneráló programunkat, melynek egy CAD file és bemeneti paraméterek (hány képet generáljunk stb..) 
+kell csupán és tetszőleges tanító adatot tudunk létrehozni vele (jellemzően egy képhez 5-30 másodperc szükséges).\\[5pt]
+Fontos még megemlíteni, hogy a hálókhoz nem elég csupán a nyers képek megléte, 
+azokat címkézni is kell, azaz másik fájlokban megadni, hogy egy-egy adott képen 
+milyen osztályú objektum és hol helyezkedik el, ez humán munkával szintén 
+igen költséges lenne, de a program ezt is megoldja. További részletesebb leírás és eredmények 
+az objektumm detektálás dokumentációban.
+\begin{figure}[h]
+  \centering
+  \includegraphics*[scale=0.5]{data.png}
+  \caption{Generált adat}
+\end{figure}
 \subsection{Vegyes tanító adat}
-
+A szintetikus adatok mellett ha valósakat is tartalmaz az adatbázisunk, 
+az legtöbbször a neurális háló eredményességében javulást eredményez.
 \subsection{Valós adatra illesztés}
-
+Egy-egy adott hálót a szintetikus vagy vegyes adatokon tanítás után 
+finomhangolni lehet ha megfelelő minőségű valós képeket tanítjuk tovább 
+jóval kevesebb ideig.
 \subsection{További fejlesztési irányok}
-
+Egy másik igen érdekes fejlesztési irány a képeknek neurális hálókkal 
+történő generálása.
 
 
 
